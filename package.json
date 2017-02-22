@@ -1,37 +1,40 @@
 {
   "name": "ol3-react-example",
-  "version": "0.0.0",
-  "description": "Basic ol3 + react example",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server.js"
+  "version": "1.0.0",
+  "description": "Basic example for using OpenLayers 3 with React and Redux.",
+  "keywords": [
+    "openlayers",
+    "ol3",
+    "redux",
+    "react"
+  ],
+  "homepage": "https://github.com/pka/ol3-react-example#readme",
+  "bugs": {
+    "url": "https://github.com/pka/ol3-react-example/issues"
   },
+  "license": "MIT",
+  "author": "Pirmin Kalberer",
+  "contributors": [
+    "Jason Stafford <jason.stafford@scrycollective.com>"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pka/ol3-react-example.git"
   },
-  "keywords": [
-    "redux",
-    "react"
-  ],
-  "author": "Pirmin Kalberer",
-  "license": "MIT",
-  "bugs": {
-        "url": "https://github.com/pka/ol3-react-example/issues"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom"
   },
-  "homepage": "https://github.com/pka/ol3-react-example#readme",
   "dependencies": {
     "openlayers": "^3.3.0",
-    "react": "^0.13.3",
+    "radium": "^0.18.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "react-redux": "^0.5.0",
     "redux": "^1.0.0-rc"
   },
   "devDependencies": {
-    "react-hot-loader": "^1.2.7",
-    "jsx-loader": "^0.13.2",
-    "style-loader": "^0.12.0",
-    "css-loader": "^0.16.0",
-    "webpack": "^1.9.11",
-    "webpack-dev-server": "^1.9.0"
+    "react-scripts": "0.9.0"
   }
 }

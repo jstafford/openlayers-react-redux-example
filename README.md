@@ -1,4 +1,4 @@
-# OpenLayer 3 React example
+# OL3 / React example
 
 Basic example for using [OpenLayers 3](http://openlayers.org/) with [React](http://facebook.github.io/react/) and [Redux](http://rackt.github.io/redux/).
 
@@ -14,8 +14,8 @@ Slides from the presentation at FOSS4G 2015 in Seoul are available [here](http:/
 
 To run this example:
 
-1. `npm install`
-2. `npm start`
+1. `yarn install`
+2. `yarn start`
 3. open http://localhost:3000/ in the browser
 
 The server supports hot reloading while keeping the application state.
