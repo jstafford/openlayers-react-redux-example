@@ -22,8 +22,9 @@
     "url": "git+https://github.com/pka/ol3-react-example.git"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
+    "buildOL3": "node node_modules/openlayers/tasks/build.js ./ol-custom.json ./src/ol-custom.js",
+    "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {

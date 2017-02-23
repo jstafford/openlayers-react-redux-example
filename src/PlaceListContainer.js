@@ -4,7 +4,7 @@ import { selectAction } from './actions'
 import PlaceListComponent from './PlaceListComponent'
 
 // Map Redux state to component props
-function mapStateToProps(state)  {
+const mapStateToProps = state => {
   return {
     places: state.places,
     selected: state.selected
@@ -12,12 +12,9 @@ function mapStateToProps(state)  {
 }
 
 // Map Redux actions to component props
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
   return {
-    onSelectClick: function(e) {
-      let selected = e.dispatchMarker.split('$')[1]
-      dispatch(selectAction(selected))
-    }
+    onSelectClick: selected => dispatch(selectAction(selected))
   }
 }
 
