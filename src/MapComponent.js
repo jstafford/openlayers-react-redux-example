@@ -9,6 +9,7 @@ import './popup.css'
 
 class MapComponent extends Component {
   static propTypes = {
+    onSelectClick: PropTypes.func.isRequired,
     onVisiblePlacesChange: PropTypes.func.isRequired,
     selected: PropTypes.string
   }
@@ -58,6 +59,16 @@ class MapComponent extends Component {
     }
   }
 
+  clickHandler(event) {
+    const {onSelectClick} = this.props
+    const placeLayer = this.olPlaceLayer
+    this.olMap.forEachFeatureAtPixel(event.pixel, (feature, layer) => {
+      let selected = placeName(feature.getProperties())
+      onSelectClick.call(null, selected)
+      return true // truthy return ends the iteration through the features
+    }, {layerFilter: candidate => candidate === placeLayer})
+  }
+
   componentDidMount() {
     const placeSrcOptions = {format: new ol.format.GeoJSON(), url: 'OSGEoLabs.json'}
     const placeSrc = new ol.source.Vector(placeSrcOptions)
@@ -90,6 +101,7 @@ class MapComponent extends Component {
 
     this.olPlaceLayer.on('change', this.updateVisiblePlaces, this)
     this.olMap.on('moveend', this.updateVisiblePlaces, this)
+    this.olMap.on('click', this.clickHandler, this)
   }
 
   render() {

@@ -17,10 +17,12 @@ class PlaceListComponent extends Component {
   }
 
   styles = {
-    ':hover': {
-      backgroundColor: 'yellow'
+    base: {
+      ':hover': {
+        backgroundColor: 'yellow'
+      },
     },
-    '.selected': {
+    selected: {
       backgroundColor: 'orange'
     }
   }
@@ -33,14 +35,11 @@ class PlaceListComponent extends Component {
         <ul>
           {places.map(place => {
             const name = placeName(place)
-            const selClass = (name === selected)
-              ? 'selected'
-              : ''
             return <li
               key={name}
-              className={selClass}
               onClick={() => onSelectClick.call(null, name)}
-              style={this.styles}>{name}</li>
+              style={[this.styles.base,
+                (name === selected) && this.styles.selected]}>{name}</li>
           })}
         </ul>
       </div>
