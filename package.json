@@ -28,11 +28,12 @@
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "openlayers": "^3.3.0",
+    "openlayers": "^4.0.1",
     "radium": "^0.18.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-redux": "^5.0.2",
+    "react-redux": "^5.0.3",
+    "react-split-pane": "^0.1.57",
     "redux": "^3.6.0"
   },
   "devDependencies": {

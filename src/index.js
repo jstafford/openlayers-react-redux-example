@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {StyleRoot} from 'radium'
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import App from './App';
+import App from './App'
 import configureStore from './configureStore'
 
-import './index.css';
+import './index.css'
 
-var store = configureStore();
+var store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <StyleRoot>
+      <App />
+    </StyleRoot>
   </Provider>,
   document.getElementById('root')
-);
+)

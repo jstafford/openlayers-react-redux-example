@@ -1,6 +1,6 @@
 import ol from 'openlayers'
 import React, { Component, PropTypes } from 'react'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 
 import { placeName } from './reducer'
 
@@ -93,12 +93,12 @@ class MapComponent extends Component {
   }
 
   render() {
-    const styles = {'.map': { height: 400 }}
+    const styles = { height: '100%', width: '100%' }
     const { selected } = this.props
 
     this.updateSelection(selected)
     return (
-      <div ref='map' className='map' style={styles}>
+      <div ref='map' style={styles}>
         <div ref='popup' className='ol-popup'></div>
       </div>
     )

@@ -28,21 +28,24 @@ class PlaceListComponent extends Component {
   render() {
     const {onSelectClick, places, selected} = this.props
     return (
-      <ul>
-        {places.map(place => {
-          const name = placeName(place)
-          const selClass = (name === selected)
-            ? 'selected'
-            : ''
-          return <li
-            key={name}
-            className={selClass}
-            onClick={() => onSelectClick.call(null, name)}
-            style={this.styles}>{name}</li>
-        })}
-      </ul>
+      <div>
+        <p>{`${places.length}`} visible <strong>Geo for All</strong> labs (click to select):</p>
+        <ul>
+          {places.map(place => {
+            const name = placeName(place)
+            const selClass = (name === selected)
+              ? 'selected'
+              : ''
+            return <li
+              key={name}
+              className={selClass}
+              onClick={() => onSelectClick.call(null, name)}
+              style={this.styles}>{name}</li>
+          })}
+        </ul>
+      </div>
     )
   }
 }
 
-export default Radium(PlaceListComponent);
+export default Radium(PlaceListComponent)
