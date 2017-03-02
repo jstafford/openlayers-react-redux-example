@@ -7,7 +7,7 @@
     "react",
     "redux"
   ],
-  "homepage": "https://github.com/jstafford/openlayers-react-redux-example#readme",
+  "homepage": "https://jstafford.github.io/openlayers-react-redux-example",
   "bugs": {
     "url": "https://github.com/jstafford/openlayers-react-redux-example/issues"
   },
@@ -20,10 +20,12 @@
   "scripts": {
     "build": "react-scripts build",
     "buildOL3": "node node_modules/openlayers/tasks/build.js ./ol-custom.json ./src/ol-custom.js",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
+    "gh-pages": "^0.12.0",
     "openlayers": "^4.0.1",
     "radium": "^0.18.1",
     "react": "^15.4.2",
