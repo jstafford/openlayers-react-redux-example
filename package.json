@@ -21,6 +21,7 @@
     "build": "react-scripts build",
     "buildOL3": "node node_modules/openlayers/tasks/build.js ./ol-custom.json ./src/ol-custom.js",
     "deploy": "gh-pages -d build",
+    "predeploy": "yarn build",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
