@@ -27,15 +27,15 @@
   },
   "dependencies": {
     "gh-pages": "^0.12.0",
-    "openlayers": "^4.0.1",
-    "radium": "^0.18.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
-    "react-split-pane": "^0.1.58",
+    "openlayers": "^4.1.0",
+    "radium": "^0.18.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-split-pane": "^0.1.63",
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "react-scripts": "^0.9.3"
+    "react-scripts": "^0.9.5"
   }
 }
