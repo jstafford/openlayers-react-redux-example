@@ -19,7 +19,7 @@
   "repository": "jstafford/openlayers-react-redux-example",
   "scripts": {
     "build": "react-scripts build",
-    "buildOL3": "node node_modules/openlayers/tasks/build.js ./ol-custom.json ./src/ol-custom.js",
+    "coverage": "yarn test -- --coverage",
     "deploy": "gh-pages -d build",
     "predeploy": "yarn build",
     "start": "react-scripts start",
