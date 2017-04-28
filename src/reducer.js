@@ -1,8 +1,8 @@
 import { VISIBLE_TYPE, SELECT_TYPE } from './actions'
 
 export const placeName = function(place) {
-    // extract text from link
-    return place.name.replace(/<(?:.|\n)*?>/g, '')
+    // strip any html tags from the name
+    return place.name.replace(/<[^>]*>/g, '')
 }
 
 // Reducer:

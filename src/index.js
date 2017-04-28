@@ -8,7 +8,7 @@ import configureStore from './configureStore'
 
 import './index.css'
 
-var store = configureStore()
+const store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>
