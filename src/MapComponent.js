@@ -18,6 +18,7 @@ class MapComponent extends Component {
   olPlaceLayer = null
   popupElement = null
   popup = null
+  prevWidth = null
 
   getVisibleFeatures() {
     if (this.olMap) {
@@ -55,6 +56,22 @@ class MapComponent extends Component {
         let pos = feature.getGeometry().getFirstCoordinate()
         this.popupElement.innerHTML = feature.getProperties().name
         this.popup.setPosition(pos)
+      }
+    }
+  }
+
+  updateSize() {
+    const map = this.olMap
+
+    if (null !== map) {
+      let target = map.getTarget()
+      if (target) {
+        let curWidth = target.clientWidth
+        if (this.prevWidth !== curWidth) {
+          map.updateSize()
+          this.updateVisiblePlaces(null)
+        }
+        this.prevWidth = curWidth
       }
     }
   }

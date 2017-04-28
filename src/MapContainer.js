@@ -18,10 +18,23 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const options = {
+  withRef: true
+}
+
 // Connected Container:
 const MapContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
+  null,
+  options
 )(MapComponent)
+
+MapContainer.prototype.updateSize = function() {
+  const mapComponent = this.getWrappedInstance()
+  if (null != mapComponent) {
+    mapComponent.updateSize()
+  }
+}
 
 export default MapContainer

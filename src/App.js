@@ -1,21 +1,19 @@
 import React, { Component } from 'react'
-import SplitPane from 'react-split-pane'
 
 import Header from './Header'
 import MapContainer from './MapContainer'
 import PlaceListContainer from './PlaceListContainer'
-
-import './resizer.css'
+import SplitContainer from './SplitContainer'
 
 class App extends Component {
   render() {
     return (
       <div>
         <Header />
-        <SplitPane split='vertical' defaultSize={320}>
+        <SplitContainer>
           <PlaceListContainer />
           <MapContainer />
-        </SplitPane>
+        </SplitContainer>
       </div>
     )
   }

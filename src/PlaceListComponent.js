@@ -1,4 +1,3 @@
-// React component
 import Radium from 'radium'
 import React, {Component, PropTypes} from 'react'
 
@@ -29,8 +28,13 @@ class PlaceListComponent extends Component {
 
   render() {
     const {onSelectClick, places, selected} = this.props
+    const divStyle = {
+      borderStyle: 'solid',
+      borderWidth: 7,
+      borderColor: 'white'
+    }
     return (
-      <div>
+      <div style={divStyle}>
         <p>{`${places.length}`} visible <strong>Geo for All</strong> labs (click to select):</p>
         <ul>
           {places.map(place => {
