@@ -20,7 +20,7 @@ class MapComponent extends Component {
   popupElement = null
   popup = null
 
-  getVisibleFeatures() {
+  getVisibleFeatures () {
     if (this.olMap) {
       const size = this.olMap.getSize()
       const view = this.olMap.getView()
@@ -37,16 +37,16 @@ class MapComponent extends Component {
     return null
   }
 
-  updateVisiblePlaces(event) {
+  updateVisiblePlaces (event) {
     const { onVisiblePlacesChange } = this.props
     const features = this.getVisibleFeatures()
     if (features) {
       const places = features.map(feature => feature.getProperties())
-      onVisiblePlacesChange.call(null, places)
+      onVisiblePlacesChange(null, places)
     }
   }
 
-  updateSelection(name) {
+  updateSelection (name) {
     const features = this.getVisibleFeatures()
     if (features) {
       const selected = features.filter(feature => name === placeName(feature.getProperties()))
@@ -60,17 +60,17 @@ class MapComponent extends Component {
     }
   }
 
-  clickHandler(event) {
+  clickHandler (event) {
     const {onSelectClick} = this.props
     const placeLayer = this.olPlaceLayer
     this.olMap.forEachFeatureAtPixel(event.pixel, (feature, layer) => {
       let selected = placeName(feature.getProperties())
-      onSelectClick.call(null, selected)
+      onSelectClick(null, selected)
       return true // truthy return ends the iteration through the features
     }, {layerFilter: candidate => candidate === placeLayer})
   }
 
-  componentDidMount() {
+  componentDidMount () {
     const placeSrcOptions = {format: new ol.format.GeoJSON(), url: 'OSGEoLabs.json'}
     const placeSrc = new ol.source.Vector(placeSrcOptions)
     const openStreetMapSrc = new ol.source.OSM()
@@ -105,14 +105,14 @@ class MapComponent extends Component {
     this.olMap.on('click', this.clickHandler, this)
   }
 
-  render() {
+  render () {
     const styles = { height: '100%', width: '100%' }
     const { selected } = this.props
 
     this.updateSelection(selected)
     return (
       <div ref='map' style={styles}>
-        <div ref='popup' className='ol-popup'></div>
+        <div ref='popup' className='ol-popup' />
       </div>
     )
   }

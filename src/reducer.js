@@ -1,16 +1,16 @@
 import { VISIBLE_TYPE, SELECT_TYPE } from './actions'
 
-export const placeName = function(place) {
-    // strip any html tags from the name
-    return place.name.replace(/<[^>]*>/g, '')
+export const placeName = function (place) {
+  // strip any html tags from the name
+  return place.name.replace(/<[^>]*>/g, '')
 }
 
 // Reducer:
-function placeSelector(state, action) {
+function placeSelector (state, action) {
   if (typeof state === 'undefined') {
     state = {places: [], selected: null}
   }
-  switch(action.type){
+  switch (action.type) {
     case VISIBLE_TYPE:
       return {places: action.places, selected: state.selected}
     case SELECT_TYPE:

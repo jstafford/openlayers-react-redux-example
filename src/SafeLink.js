@@ -5,7 +5,8 @@ class SafeLink extends Component {
   static propTypes = {
     href: PropTypes.string.isRequired
   }
-  render() {
+
+  render () {
     const {children, href} = this.props
     return (
       <a href={href} target='_blank' rel='noopener noreferrer'>

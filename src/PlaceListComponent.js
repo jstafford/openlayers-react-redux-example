@@ -6,19 +6,19 @@ import React from 'react'
 
 import {placeName} from './reducer'
 
-const PlaceListComponent = createReactClass( {
+const PlaceListComponent = createReactClass({
   styles: {
     base: {
       ':hover': {
         backgroundColor: 'yellow'
-      },
+      }
     },
     selected: {
       backgroundColor: 'orange'
     }
   },
 
-  render: function() {
+  render: function () {
     const {onSelectClick, places, selected} = this.props
     return (
       <div>
@@ -28,7 +28,7 @@ const PlaceListComponent = createReactClass( {
             const name = placeName(place)
             return <li
               key={name}
-              onClick={() => onSelectClick.call(null, name)}
+              onClick={() => onSelectClick(null, name)}
               style={[this.styles.base,
                 (name === selected) && this.styles.selected]}>{name}</li>
           })}

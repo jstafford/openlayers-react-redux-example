@@ -1,3 +1,4 @@
+/* eslint-env jest */
 import {StyleRoot} from 'radium'
 import React from 'react'
 import ReactDOM from 'react-dom'
