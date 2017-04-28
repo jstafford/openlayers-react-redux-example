@@ -21,13 +21,15 @@
     "build": "react-scripts build",
     "coverage": "yarn test -- --coverage",
     "deploy": "gh-pages -d build",
+    "lint": "yarn eslint src",
     "predeploy": "yarn build",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "gh-pages": "^0.12.0",
+    "create-react-class": "^15.5.2",
     "openlayers": "^4.1.0",
+    "prop-types": "^15.5.8",
     "radium": "^0.18.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -36,6 +38,12 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "react-scripts": "^0.9.5"
+    "eslint": "^3.19.0",
+    "gh-pages": "^0.12.0",
+    "react-scripts": "^0.9.5",
+    "standard": "^10.0.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }

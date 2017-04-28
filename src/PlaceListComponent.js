@@ -1,22 +1,13 @@
 // React component
+import createReactClass from 'create-react-class'
+import PropTypes from 'prop-types'
 import Radium from 'radium'
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
 
 import {placeName} from './reducer'
 
-class PlaceListComponent extends Component {
-  static propTypes = {
-    onSelectClick: PropTypes.func.isRequired,
-    places: PropTypes.arrayOf(
-              PropTypes.shape({
-                name: PropTypes.string.isRequired,
-                time: PropTypes.string
-              })
-            ),
-    selected: PropTypes.string
-  }
-
-  styles = {
+const PlaceListComponent = createReactClass( {
+  styles: {
     base: {
       ':hover': {
         backgroundColor: 'yellow'
@@ -25,9 +16,9 @@ class PlaceListComponent extends Component {
     selected: {
       backgroundColor: 'orange'
     }
-  }
+  },
 
-  render() {
+  render: function() {
     const {onSelectClick, places, selected} = this.props
     return (
       <div>
@@ -45,6 +36,17 @@ class PlaceListComponent extends Component {
       </div>
     )
   }
+})
+
+PlaceListComponent.propTypes = {
+  onSelectClick: PropTypes.func.isRequired,
+  places: PropTypes.arrayOf(
+            PropTypes.shape({
+              name: PropTypes.string.isRequired,
+              time: PropTypes.string
+            })
+          ),
+  selected: PropTypes.string
 }
 
 export default Radium(PlaceListComponent)

@@ -1,8 +1,9 @@
 import ol from 'openlayers'
-import React, { Component, PropTypes } from 'react'
+import PropTypes from 'prop-types'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
-import { placeName } from './reducer'
+import {placeName} from './reducer'
 
 import 'openlayers/css/ol.css'
 import './popup.css'
